@@ -5,64 +5,66 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Laith's Portfolio</title>
   <meta name="description" content="Minimalist portfolio for Laith" />
-
   <style>
-   
+    /* Optional custom font: ensure this path/file exists */
     @font-face {
       font-family: "Upheaval TT (BRK)";
       src: url("./fonts/UpheavalTT(BRK).ttf") format("truetype");
       font-display: swap;
     }
-
     :root { --blue: rgb(0,95,247); --fg: #ffffff; }
-
     html, body {
-      margin: 0;
-      padding: 0;
-      background: var(--blue);
-      color: var(--fg);
+      margin: 0; padding: 0;
+      background: var(--blue); color: var(--fg);
       font-family: "Upheaval TT (BRK)", system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
       line-height: 1.5;
     }
-
     main { max-width: 960px; margin: 0 auto; padding: 12px; }
-
-    img.fullscreen {
-      width: 100vw;
-      height: 100vh;
-      object-fit: cover;
-      display: block;
-      margin: 0 calc(50% - 50vw); 
+    /* Full-bleed media (images & videos) */
+    .fullscreen {
+      width: 100vw; height: 100vh; object-fit: cover; display: block;
+      margin: 0 calc(50% - 50vw);
+      background: #000; /* avoids a flash of blue while loading video */
     }
-
     h1 { margin: 14px 0 8px; font-size: clamp(22px, 5vw, 36px); }
-    p { margin: 0; font-size: clamp(14px, 2.6vw, 18px); }
-
-
+    p  { margin: 0; font-size: clamp(14px, 2.6vw, 18px); }
+    .site-title { text-align:center; margin: 12px 0 18px; }
   </style>
 </head>
 <body>
   <main>
+    <!-- Top page title -->
+    <h1 class="site-title">Laith's Portfolio</h1>
+
     <!-- Picture 1 -->
     <img class="fullscreen" src="wave crash.jpg" alt="Picture 1" />
     <img class="fullscreen" src="lagoon.jpg" alt="Picture 2" />
     <h1>Photography</h1>
-    <p>My photography can be found at Cheddarness.com. I used to ask my siblings and parents for their old film cameras, since it would give me an excuse to go out and explore the world. While I do not do too much film photography now (because the film and processing of the film has gotten very expesnive), I spent a considerable amount of time exploring the world through my photography. I eventually displayed my photos in a few exhibitions across Los Angeles.</p>
+    <p>My photography can be found at Cheddareness.com. I used to ask my siblings and parents for their old film cameras, since it would give me an excuse to go out and explore the world. While I do not do too much film photography now (because the film and processing of the film has gotten very expensive), I spent a considerable amount of time exploring the world through my photography. I eventually displayed my photos in a few exhibitions across Los Angeles.</p>
 
     <br/><br/><br/><br/>
 
-    <!-- Picture 2 -->
-    <src="face.mp4" alt="Gif 1" />
+    <!-- Video 1 (face.mp4) -->
+    <video class="fullscreen" controls playsinline preload="metadata">
+      <source src="face.mp4" type="video/mp4" />
+      <!-- If you only have MOV, try: <source src="face.mov" type="video/quicktime" /> -->
+      Your browser does not support HTML5 video.
+    </video>
     <h1>Visuals</h1>
-    <p>As a producer and DJ of Techno music, I have developed an interest for creating visuals that support the music I play and make, since visuals are a massive compliment to the hypnotic effects of Techno. Here are some works I have created to compliment the music I play/make. First, the “face” video was created with the AI website “thispersondoesnotexist”. I wanted to simulate the experience of being in a rave amongst a sea of people you don’t know, and will most likely never see again. It is a unique experience to share the emotions of the night with strangers, dancing the night away. Those visuals were made for a rave I DJed at in AprilSecond, I produced a song that is more intense/harder than the techno I usually produce, yet was very happy with the result. I wanted to create a visual experience that shared the intensity of the kick, the screech, and the top-end. I compiled videos I liked from animes (some I have watched some I haven’t), and created a TouchDesigner system that is reactive to the kick. When the kick hits, a ton of distortion and glitch-effect floods the screen. I intended on doing this to replicate the feeling of melting when a Kick that had hits the speakers. Lastly, I created a visual that displayed a 3D scan of my face. Similar to the second visual, the visual was responsive to the kick. I connected my Drum machine and Acid bass to Ableton, and Ableton to Touchdesigner. I chose to display my head to show the “personal” it feels to live DJ.</p>
+    <p>As a producer and DJ of Techno music, I create visuals to support the music. The “face” video uses the AI site “thispersondoesnotexist” to evoke being among strangers at a rave. I also built a TouchDesigner system reactive to the kick: when the kick hits, distortion/glitch floods the screen to mirror the intensity of the track. Lastly, I built a visual around a 3D scan of my face, driven live by my drum machine and acid bass via Ableton → TouchDesigner.</p>
 
     <br/><br/><br/><br/>
 
-
-    <!-- Picture 3 -->
-    <img class="fullscreen" src="Set Preview.mov" alt="Video 1" />
+    <!-- Video 2 (Set Preview) -->
+    <video class="fullscreen" controls playsinline preload="metadata">
+      <source src="Set Preview.mp4" type="video/mp4" />
+      <!-- If your file is MOV, you can try this, but MP4 is recommended:
+      <source src="Set Preview.mov" type="video/quicktime" />
+      -->
+      Your browser does not support HTML5 video.
+    </video>
     <h1>Videos</h1>
-    <p>I used to spend a lot of time shooting random videos around 2 years ago. I used to shoot music videos for local rappers, which I had fun with for a short time. I primarily used old VHS cameras I would find garage sales to show how much you can do with inexpensive equipment, primarily using video effects I would find inside the camera. During my first Deltopia at UCSB, I decided to document what I saw throughout the day with one of the cameras, and created a short video for Youtube using a rapid editing style to emphasize the large and fast paced crowd during the massive party. In regards to my music, I recorded a DJ set last summer. I recorded a Trance set and wanted to edit a video alongside my music to make the viewing/listening experience more fun. The full hour set can be found on YouTube, but the clip below was a teaser a posted to my instagram to introduce people to the lightheartedness and positive mood I tried to depict in the video</p>
+    <p>I’ve shot music videos and VHS-style experiments using thrifted cameras. During my first Deltopia at UCSB, I documented the day with a rapid edit to match the pace of the crowd. For my music, I recorded a Trance DJ set and edited a playful visual to make the viewing/listening experience more fun. The full set is on YouTube; the clip here is a teaser.</p>
 
     <br/><br/><br/><br/>
   </main>
