@@ -1,116 +1,80 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Laith's Portfolio</title>
+  <meta name="description" content="Minimalist portfolio for Laith" />
 
   <style>
-    /* Optional custom font: place ./fonts/UpheavalTT.ttf next to this file */
+    /* Optional custom font: place ./fonts/UpheavalTT.ttf in your repo */
     @font-face {
       font-family: "Upheaval TT";
       src: url("./fonts/UpheavalTT.ttf") format("truetype");
       font-display: swap;
     }
 
-    :root{
-      --blue: rgb(0,95,247);
-      --fg: #ffffff;
-    }
+    :root { --blue: rgb(0,95,247); --fg: #ffffff; }
 
     html, body {
       margin: 0;
       padding: 0;
-      background: var(--blue); /* shows behind/between images */
+      background: var(--blue);
       color: var(--fg);
-      height: 100%;
       font-family: "Upheaval TT", system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
-    }
-
-    /* Each project is a full-screen, scrollable section */
-    main { scroll-snap-type: y mandatory; }
-    .project {
-      position: relative;
-      height: 100vh;
-      width: 100vw;
-      overflow: hidden;
-      scroll-snap-align: start;
-    }
-
-    /* Full-bleed image */
-    .project > img {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    /* Title + description "text box" */
-    .title {
-      position: absolute;
-      left: 16px;
-      bottom: 112px;
-      margin: 0;
-      font-size: clamp(24px, 6vw, 56px);
-      line-height: 1.1;
-      text-shadow: 0 2px 18px rgba(0,0,0,0.35);
-    }
-
-    .desc {
-      position: absolute;
-      left: 16px;
-      bottom: 24px;
-      max-width: min(92vw, 800px);
-      background: rgba(0,0,0,0.45);
-      padding: 12px 14px;
-      border-radius: 12px;
-      font-size: clamp(14px, 2.6vw, 18px);
       line-height: 1.5;
-      box-shadow: 0 8px 30px rgba(0,0,0,0.35);
     }
 
-    @media (min-width: 700px) {
-      .title { left: 32px; bottom: 128px; }
-      .desc  { left: 32px; bottom: 32px; }
+    main { max-width: 960px; margin: 0 auto; padding: 12px; }
+
+    /* Full-screen image */
+    img.fullscreen {
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+      display: block;
+      margin: 0 calc(50% - 50vw); /* let image bleed to full viewport width inside centered main */
     }
+
+    h1 { margin: 14px 0 8px; font-size: clamp(22px, 5vw, 36px); }
+    p { margin: 0; font-size: clamp(14px, 2.6vw, 18px); }
+
+    /* Just like the example: big gaps via <br/> */
   </style>
 </head>
 <body>
   <main>
+    <!-- Picture 1 -->
+    <img class="fullscreen" src="picture1.jpg" alt="Picture 1" />
+    <h1>Header 1</h1>
+    <p>Text box 1</p>
 
-    <!-- Project 1 -->
-    <section class="project" id="p1">
-      <img src="picture1.jpg" alt="Picture 1" />
-      <div class="shade"></div>
-      <h2 class="title">Header 1</h2>
-      <div class="desc">Text box 1</div>
-    </section>
+    <br/><br/><br/><br/>
 
-    <!-- Project 2 -->
-    <section class="project" id="p2">
-      <img src="picture2.jpg" alt="Picture 2" />
-      <div class="shade"></div>
-      <h2 class="title">Header 2</h2>
-      <div class="desc">Text box 2</div>
-    </section>
+    <!-- Picture 2 -->
+    <img class="fullscreen" src="picture2.jpg" alt="Picture 2" />
+    <h1>Header 2</h1>
+    <p>Text box 2</p>
 
-    <!-- Project 3 -->
-    <section class="project" id="p3">
-      <img src="picture3.jpg" alt="Picture 3" />
-      <div class="shade"></div>
-      <h2 class="title">Header 3</h2>
-      <div class="desc">Text box 3</div>
-    </section>
+    <br/><br/><br/><br/>
 
-    <!-- Project 4 -->
-    <section class="project" id="p4">
-      <img src="picture4.jpg" alt="Picture 4" />
-      <div class="shade"></div>
-      <h2 class="title">Header 4</h2>
-      <div class="desc">Text box 4</div>
-    </section>
+    <!-- Picture 3 -->
+    <img class="fullscreen" src="picture3.jpg" alt="Picture 3" />
+    <h1>Header 3</h1>
+    <p>Text box 3</p>
 
+    <br/><br/><br/><br/>
+
+    <!-- Picture 4 -->
+    <img class="fullscreen" src="picture4.jpg" alt="Picture 4" />
+    <h1>Header 4</h1>
+    <p>Text box 4</p>
+
+    <br/><br/><br/><br/>
   </main>
+
+  <footer style="text-align:center; padding: 8px 0 24px; opacity:.85;">
+    © 2025 Laith
+  </footer>
 </body>
 </html>
