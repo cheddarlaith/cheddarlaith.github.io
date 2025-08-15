@@ -1,13 +1,50 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>Laith Jaroudi</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Laith Jaroudi — Home</title>
+  <style>
+    :root{--bg:#0f1115;--fg:#eaeef2;--muted:#9aa4af;--card:#151922;--link:#a3d9ff;--accent:#8ecae6}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--fg);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial}
+    .container{max-width:960px;margin:0 auto;padding:24px}
+    header{display:flex;align-items:center;gap:16px}
+    header img{width:72px;height:72px;border-radius:50%;object-fit:cover;border:2px solid var(--accent)}
+    h1{margin:0;font-size:1.35rem}
+    .muted{color:var(--muted)}
+    nav{margin-left:auto}
+    nav a{color:var(--link);text-decoration:none;margin-left:16px}
+    nav a:hover{text-decoration:underline}
+    .sketch{background:var(--card);border-radius:16px;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,.35);margin-top:18px}
+    footer{display:flex;justify-content:space-between;align-items:center;margin-top:20px;color:var(--muted);font-size:.9rem}
+  </style>
 </head>
 <body>
-  <img src="me.png" alt="Laith’s Portrait" style="max-width:200px;">
-  <h1>Laith Jaroudi</h1>
-  <p>I’m a PBS major & Philosophy/MAD minor at UCSB, and I produce and mix Techno.</p>
+  <div class="container">
+    <header>
+      <!-- FIX THIS FILENAME -->
+      <img src="me.png" alt="My portrait" />
+      <div>
+        <h1>Laith Jaroudi</h1>
+        <div class="muted">PBS major • Philosophy/MAD minor • Techno producer & DJ</div>
+      </div>
+      <nav>
+        <a href="/portfolio/">Portfolio</a>
+        <a href="mailto:you@example.com">Contact</a>
+      </nav>
+    </header>
+
+    <section class="sketch">
+      <script src="https://cdn.jsdelivr.net/npm/p5@1.9.3/lib/p5.min.js"></script>
+      <script src="./home-sketch.js"></script>
+    </section>
+
+    <footer>
+      <div>© 2025 Laith Jaroudi</div>
+      <div>
+        <a href="https://github.com/cheddarlaith" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </footer>
+  </div>
 </body>
-https://editor.p5js.org/cheddarlaith/sketches/QhZF32bm-
 </html>
