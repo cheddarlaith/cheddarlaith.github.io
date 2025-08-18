@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Laith's Portfolio</title>
+  <meta name="description" content="Minimalist portfolio for Laith" />
+  <style>
+    /* Optional custom font: ensure this path/file exists */
+    @font-face {
+      font-family: "Upheaval TT (BRK)";
+      src: url("./fonts/UpheavalTT(BRK).ttf") format("truetype");
+      font-display: swap;
+    }
+
+    :root { --blue: rgb(0,95,247); --fg: #ffffff; }
+
+    html, body {
+      margin: 0; padding: 0;
+      background: var(--blue); color: var(--fg);
+      font-family: "Upheaval TT (BRK)", system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.6;
+    }
+
+    main { max-width: 1100px; margin: 0 auto; padding: 16px; }
+
+    /* MUCH roomier site title */
+    .site-title {
+      text-align: center;
+      font-size: clamp(32px, 8vw, 68px);
+      line-height: 1.05;
+      margin: 96px 0 80px; /* more white space above & below */
+    }
+
+    /* Intro block BEFORE any media */
+    .intro {
+      max-width: 68ch;  /* narrow for readability */
+      margin: 0 auto 160px; /* generous bottom space before the first image */
+      font-size: clamp(15px, 2.8vw, 19px);
+    }
+    .intro p { margin: 0 0 18px; }
+
+    /* Full-bleed media (images & videos) */
+    .fullscreen {
+      width: 100vw; height: 100vh; object-fit: cover; display: block;
+      margin: 0 calc(50% - 50vw);
+      background: #000; /* avoids a flash of blue while loading video */
+    }
+
+    /* Text sections after media: LOTS of breathing room */
+    .text-block {
+      max-width: 68ch;
+      margin: 140px auto; /* BIG vertical whitespace */
+      padding: 0 4px;
+    }
+
+    .text-block h1 {
+      margin: 0 0 16px;
+      font-size: clamp(24px, 6vw, 40px);
+      line-height: 1.15;
+    }
+
+    .text-block p {
+      margin: 0;
+      font-size: clamp(15px, 2.8vw, 19px);
+      line-height: 1.7; /* airier paragraphs */
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <!-- Big page title with extra white space -->
+    <h1 class="site-title">Laith's Portfolio</h1>
+
+    <!-- Intro text BEFORE any photos -->
+    <section class="intro">
+      <p>I believe that creativity is something that should be exercised, just like a muscle. I began realizing this in high school, when I met a group of music producers that made trap beats, and prioritized building a routine for their craft.</p>
+      <p>I picked up film photography and videographer when I first moved to the US. I did not have too many friends and found company and peace through capturing moments through my films. I began commissioning myself for editing and filming music videos for around a year, until I became tired of working for other people.</p>
+      <p>I started making rap beats during middle school, since I felt like I was one of the only people in my grade that liked that kind of music. After losing interest throughout high school, I fell in love with Techno during the summer of 2022, and wanted to create a hypnotic experience through production and DJing. I have released songs on SoundCloud, played and hosted raves in Isla Vista, and have collaborated with artists across the world through Techno. I am actively working on building my experience with the genre and I am actively proposing an honors thesis for the Psychology lab I am volunteering in for research around Techno music and decision making. </p>
+      <p>I hope to push people to their limit when it comes to music, blending distorted sounds to bring out uncomfortable emotions and experiences and rewarding listeners by breaking out of their comfort zone during dance.</p>
+    </section>
+
+    <!-- Picture 1 & 2 -->
+    <img class="fullscreen" src="lagoon.jpg" alt="Picture 2" />
+    <section class="text-block">
+      <h1>Photography</h1>
+      <p>My photography can be found at Cheddareness.com. Here is a photo I took during my first year at UCSB. This was a shot I took of the lagoon nearing sunset, a personal favorite spot of mine on campus. I wanted to try to show the downhill slope of the hill in photo to show the extent of how far the hill reaches down, and believe I captured beautiful colors in the photo. </p>
+    </section>
+    <!-- Video 1 (face.mp4) -->
+    <video class="fullscreen" controls playsinline preload="metadata">
+      <source src="face.mp4" type="video/mp4" />
+      <!-- If you only have MOV, you can add:
+      <source src="face.mov" type="video/quicktime" />
+      -->
+      Your browser does not support HTML5 video.
+    </video>
+    <section class="text-block">
+      <h1>Visuals</h1>
+      <p>As a producer and DJ of Techno music, I create visuals to support the music. The “face” video uses the AI site “thispersondoesnotexist” to evoke being among strangers at a rave. I wanted to emulate the surreal experience of dancing and sharing emotions with so many strangers, something we typically feel shy in doing infront of people we know. The shift of faces represents anonmity and opens the door for people to express themselves on the dancefloor.  .</p>
+    </section>
+
+    <!-- Video 2 (Set Preview) -->
+    <video class="fullscreen" controls playsinline preload="metadata">
+      <source src="Set Preview.mov" type="video/mp4" />
+      <!-- If your file is MOV, you can add:
+      <source src="Set Preview.mov" type="video/quicktime" />
+      -->
+      Your browser does not support HTML5 video.
+    </video>
+    <section class="text-block">
+      <h1>Videos</h1>
+      <p> For my music, I recorded a Trance DJ set and edited a playful visual to make the viewing/listening experience more fun. The full set is on YouTube; the clip here is a teaser. I played 1 hour of hard trance right before my flight back to the US behind a beautiful mountain scenery.</p>
+    </section>
+  </main>
+
+  <footer style="text-align:center; padding: 8px 0 24px; opacity:.85;">
+    © 2025 Laith J  <li><a href="https://www.cheddarness.com">www.cheddarness.com</a></li>
+  </footer>
+</body>
+</html>
