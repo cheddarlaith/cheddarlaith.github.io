@@ -20,22 +20,51 @@
       background: var(--blue); color: var(--fg);
       font-family: "Upheaval TT (BRK)", system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
       line-height: 1.6;
+      scroll-behavior: smooth; /* smooth scrolling for anchor links */
     }
 
     main { max-width: 1100px; margin: 0 auto; padding: 16px; }
+
+    /* Sticky navigation bar */
+    .navbar {
+      position: sticky;
+      top: 0;
+      background: rgba(0,0,0,0.6);
+      backdrop-filter: blur(8px);
+      z-index: 1000;
+      padding: 12px 0;
+    }
+
+    .navbar nav {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+    }
+
+    .navbar a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1rem;
+      transition: color 0.2s ease;
+    }
+
+    .navbar a:hover {
+      color: var(--blue);
+    }
 
     /* MUCH roomier site title */
     .site-title {
       text-align: center;
       font-size: clamp(32px, 8vw, 68px);
       line-height: 1.05;
-      margin: 96px 0 80px; /* more white space above & below */
+      margin: 96px 0 80px;
     }
 
     /* Intro block BEFORE any media */
     .intro {
-      max-width: 68ch;  /* narrow for readability */
-      margin: 0 auto 160px; /* generous bottom space before the first image */
+      max-width: 68ch;
+      margin: 0 auto 160px;
       font-size: clamp(15px, 2.8vw, 19px);
     }
     .intro p { margin: 0 0 18px; }
@@ -44,13 +73,13 @@
     .fullscreen {
       width: 100vw; height: 100vh; object-fit: cover; display: block;
       margin: 0 calc(50% - 50vw);
-      background: #000; /* avoids a flash of blue while loading video */
+      background: #000;
     }
 
-    /* Text sections after media: LOTS of breathing room */
+    /* Text sections after media */
     .text-block {
       max-width: 68ch;
-      margin: 140px auto; /* BIG vertical whitespace */
+      margin: 140px auto;
       padding: 0 4px;
     }
 
@@ -63,16 +92,25 @@
     .text-block p {
       margin: 0;
       font-size: clamp(15px, 2.8vw, 19px);
-      line-height: 1.7; /* airier paragraphs */
+      line-height: 1.7;
     }
   </style>
 </head>
 <body>
+  <!-- Sticky Navigation -->
+  <header class="navbar">
+    <nav>
+      <a href="#photography">Photography</a>
+      <a href="#visuals">Visuals</a>
+      <a href="#videos">Videos</a>
+    </nav>
+  </header>
+
   <main>
-    <!-- Big page title with extra white space -->
+    <!-- Big page title -->
     <h1 class="site-title">Laith's Portfolio</h1>
 
-    <!-- Intro text BEFORE any photos -->
+    <!-- Intro -->
     <section class="intro">
       <p>I believe that creativity is something that should be exercised, just like a muscle. I began realizing this in high school, when I met a group of music producers that made trap beats, and prioritized building a routine for their craft.</p>
       <p>I picked up film photography and videographer when I first moved to the US. I did not have too many friends and found company and peace through capturing moments through my films. I began commissioning myself for editing and filming music videos for around a year, until I became tired of working for other people.</p>
@@ -80,41 +118,39 @@
       <p>I hope to push people to their limit when it comes to music, blending distorted sounds to bring out uncomfortable emotions and experiences and rewarding listeners by breaking out of their comfort zone during dance.</p>
     </section>
 
-    <!-- Picture 1 & 2 -->
+    <!-- Picture 1 -->
     <img class="fullscreen" src="lagoon.jpg" alt="Picture 2" />
-    <section class="text-block">
+    <section class="text-block" id="photography">
       <h1>Photography</h1>
       <p>My photography can be found at Cheddareness.com. Here is a photo I took during my first year at UCSB. This was a shot I took of the lagoon nearing sunset, a personal favorite spot of mine on campus. I wanted to try to show the downhill slope of the hill in photo to show the extent of how far the hill reaches down, and believe I captured beautiful colors in the photo. </p>
     </section>
-    <!-- Video 1 (face.mp4) -->
+
+    <!-- Video 1 -->
     <video class="fullscreen" controls playsinline preload="metadata">
       <source src="face.mp4" type="video/mp4" />
-      <!-- If you only have MOV, you can add:
       <source src="face.mov" type="video/quicktime" />
-      -->
       Your browser does not support HTML5 video.
     </video>
-    <section class="text-block">
+    <section class="text-block" id="visuals">
       <h1>Visuals</h1>
-      <p>As a producer and DJ of Techno music, I create visuals to support the music. The “face” video uses the AI site “thispersondoesnotexist” to evoke being among strangers at a rave. I wanted to emulate the surreal experience of dancing and sharing emotions with so many strangers, something we typically feel shy in doing infront of people we know. The shift of faces represents anonmity and opens the door for people to express themselves on the dancefloor.  .</p>
+      <p>As a producer and DJ of Techno music, I create visuals to support the music. The “face” video uses the AI site “thispersondoesnotexist” to evoke being among strangers at a rave. I wanted to emulate the surreal experience of dancing and sharing emotions with so many strangers, something we typically feel shy in doing infront of people we know. The shift of faces represents anonmity and opens the door for people to express themselves on the dancefloor.</p>
     </section>
 
-    <!-- Video 2 (Set Preview) -->
+    <!-- Video 2 -->
     <video class="fullscreen" controls playsinline preload="metadata">
       <source src="Set Preview.mov" type="video/mp4" />
-      <!-- If your file is MOV, you can add:
       <source src="Set Preview.mov" type="video/quicktime" />
-      -->
       Your browser does not support HTML5 video.
     </video>
-    <section class="text-block">
+    <section class="text-block" id="videos">
       <h1>Videos</h1>
-      <p> For my music, I recorded a Trance DJ set and edited a playful visual to make the viewing/listening experience more fun. The full set is on YouTube; the clip here is a teaser. I played 1 hour of hard trance right before my flight back to the US behind a beautiful mountain scenery.</p>
+      <p>For my music, I recorded a Trance DJ set and edited a playful visual to make the viewing/listening experience more fun. The full set is on YouTube; the clip here is a teaser. I played 1 hour of hard trance right before my flight back to the US behind a beautiful mountain scenery.</p>
     </section>
   </main>
 
   <footer style="text-align:center; padding: 8px 0 24px; opacity:.85;">
-    © 2025 Laith J  <li><a href="https://www.cheddarness.com">www.cheddarness.com</a></li>
+    © 2025 Laith J  
+    <li><a href="https://www.cheddarness.com">www.cheddarness.com</a></li>
   </footer>
 </body>
 </html>
